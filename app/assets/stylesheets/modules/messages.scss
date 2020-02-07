@@ -83,6 +83,7 @@
     margin-top: 28px;
     border: solid 1px;
     color: $btn-color;
+    cursor: pointer;
   }
   &__message-list {
     height: calc(100vh - 190px);
@@ -137,6 +138,7 @@
         position: absolute;
         top: 10px;
         right: 10px;
+        cursor: pointer;
       }
     }
     .send-btn {
@@ -144,6 +146,7 @@
       color: $base-color;
       width: 105px;
       margin: 0 40px 0 15px;
+      cursor: pointer;
     }
   }
 }
