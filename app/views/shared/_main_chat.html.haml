@@ -1,0 +1,20 @@
+.main-chat
+  .main-chat__group-info
+    .main-chat__left-info
+      %p.main-chat__left-info--group-name グループ名
+      %p.main-chat__left-info--member-name Member: masa
+    .main-chat__edit-btn
+      %input{class:"edit-btn", :value => "Send",:type => "submit"}/
+  .main-chat__message-list
+    =render :partial => "messages/post"
+  .main-chat__message-form
+    .main-chat__message-form--form-area
+      .input-box
+        %form
+          %input{class:"input-box__text-box", :placeholder => "Type a message", :type => "text" }/
+          %label{class:"input-box__image"}
+            =icon('fas', 'image')
+            %input{class:"input-box__image-box", type: "file"}
+      %input{class:"send-btn", :value => "Send", :type => "submit"}/
+
+    
