@@ -88,17 +88,16 @@
   &__message-list {
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    &--left-list {
-      margin-left: 40px;
-      padding: 35px 0 46px;
-      .left-list__info {
+    &--message {
+      padding: 35px 40px 46px;
+      .message-info {
         padding-bottom: 15px;
         display: flex;
-        &--member-name {
+        &__member-name {
           font-size: 16px;
           color: #333333;
         }
-        &--date {
+        &__date {
           font-size: 12px;
           color: #999999;
           margin-left: 10px;
