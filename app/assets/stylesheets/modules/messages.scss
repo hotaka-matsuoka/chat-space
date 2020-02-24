@@ -42,11 +42,15 @@
       color: $base-color;
       &__group-name {
         padding: 20px 0 5px;
-        p {font-size: 15px;}
+        .group-name {
+          font-size: 15px;
+          color: #ffffff;
+          text-decoration: none;
+        }
       }
       &__group-message {
         padding-bottom: 40px;
-        p {font-size: 11px;}
+        font-size: 15px;
       }
     }
   }
@@ -77,19 +81,24 @@
       color: #999999;
     }
   }
+  &__edit-btn {
+    padding-top: 25px;
+  }
   .edit-btn {
-    height: 40px;
-    width: 72px;
-    margin-top: 28px;
-    border: solid 1px;
-    color: $btn-color;
-    cursor: pointer;
+    text-decoration: none;
+    p{
+      color: $btn-color;
+      font-size: 20px;
+      padding: 10px 18px;
+      border: solid 1px $btn-color;
+    }
   }
   &__message-list {
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    padding: 35px 40px 0;
     &--message {
-      padding: 35px 40px 46px;
+      padding-bottom: 40px;
       .message-info {
         padding-bottom: 15px;
         display: flex;
@@ -112,40 +121,36 @@
   &__message-form {
     height: 90px;
     background-color: #d2d2d2;
-    position: relative;
-    &--form-area {
-      position: absolute;
-      top: 20px;
-      display: flex;
-    }
+    padding: 20px 40px;
     .input-box {
-      background-color: $base-color;
-      width: 1100px;
-      margin-left: 40px;
       position: relative;
       &__text-box {
-        width: 95%;
+        padding: 0 50px 0 5px;
         height: 50px;
-        padding: 10px;
-        border-style: none;
+        width: 1097px;
       }
       &__image-box {
         display: none;
       }
       &__image {
+        height: 40px;
+        width: 40px;
+      }
+      .fa-image {
         font-size: 30px;
+      }
+      .form__mask {
         position: absolute;
+        right: 140px;
         top: 10px;
-        right: 10px;
-        cursor: pointer;
       }
     }
     .send-btn {
+      position: absolute;
+      padding: 15px 28px;
+      margin-left: 20px;
       background-color: $btn-color;
-      color: $base-color;
-      width: 105px;
-      margin: 0 40px 0 15px;
-      cursor: pointer;
+      color: #ffffff;
     }
   }
 }
