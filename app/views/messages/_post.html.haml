@@ -1,25 +1,8 @@
-.main-chat__message-list--message
-  .message-info
-    %p.message-info__member-name masa
-    %p.message-info__date 2019/01/01(Wed) 17:43:01
-  %p おはよう
-.main-chat__message-list--message
-  .message-info
-    %p.message-info__member-name masa
-    %p.message-info__date 2019/01/01(Wed) 17:43:01
-  %p おはよう
-.main-chat__message-list--message
-  .message-info
-    %p.message-info__member-name masa
-    %p.message-info__date 2019/01/01(Wed) 17:43:01
-  %p おはよう
-.main-chat__message-list--message
-  .message-info
-    %p.message-info__member-name masa
-    %p.message-info__date 2019/01/01(Wed) 17:43:01
-  %p おはよう
-.main-chat__message-list--message
-  .message-info
-    %p.message-info__member-name masa
-    %p.message-info__date 2019/01/01(Wed) 17:43:01
-  %p おはよう
+- @messages.each do |message|
+  .main-chat__message-list--message
+    .message-info
+      .message-info__member-name 
+        = message.user.name
+      .message-info__date 
+        = message.created_at
+    = message.content

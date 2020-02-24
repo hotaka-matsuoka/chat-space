@@ -1,18 +1,23 @@
 .main-chat
   .main-chat__group-info
     .main-chat__left-info
-      %p.main-chat__left-info--group-name グループ名
-      %p.main-chat__left-info--member-name Member: masa
+      .main-chat__left-info--group-name
+        = @group.name
+      .main-chat__left-info--member-name 
+        Member:
+        - @group.users.each do |user|
+          = "#{user.name}さん"
     .main-chat__edit-btn
-      %input{class:"edit-btn", :value => "Send",:type => "submit"}/
+      = link_to edit_group_path(@group.id), class:"edit-btn" do
+        %p Edit
   .main-chat__message-list
     =render :partial => "messages/post"
   .main-chat__message-form
-    .main-chat__message-form--form-area
-      .input-box
-        %form
-          %input{class:"input-box__text-box", :placeholder => "Type a message", :type => "text" }/
-          %label{class:"input-box__image"}
-            =icon('fas', 'image')
-            %input{class:"input-box__image-box", type: "file"}
-      %input{class:"send-btn", :value => "Send", :type => "submit"}/
+    .input-box
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'input-box__text-box', placeholder: 'Type a message'
+        .form__mask
+          = f.label :image, class: 'input-box__image' do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'input-box__image-box'
+        = f.submit 'Send', class: 'send-btn'

@@ -13,6 +13,7 @@
       .list
         .list__group-list
           .list__group-name
-            = group.name
+            %a.group-name{:href => "/groups/#{group.id}/messages"}
+              = group.name
           .list__group-message
-            まだメッセージはありません
+            = group.show_last_message
