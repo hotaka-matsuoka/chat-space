@@ -11,7 +11,7 @@
       = link_to edit_group_path(@group.id), class:"edit-btn" do
         %p Edit
   .main-chat__message-list
-    =render :partial => "messages/post"
+    =render :partial => "messages/message"
   .main-chat__message-form
     .input-box
       = form_for [@group, @message] do |f|

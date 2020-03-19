@@ -1,5 +1,5 @@
 - @messages.each do |message|
-  .main-chat__message-list--message
+  .main-chat__message-list--message{data: {message: {id: message.id}}}
     .message-info
       .message-info__member-name 
         = message.user.name
